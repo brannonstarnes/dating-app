@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from profiles.views import profile_pic_view
 from rest_framework_simplejwt import views as jwt_views
 
 
@@ -35,6 +36,8 @@ urlpatterns = [
         jwt_views.TokenRefreshView.as_view(),
         name="token_refresh",
     ),
+    path('image_upload', profile_pic_view, name = 'profile_pic_upload'),
+    path('success', success, name = 'success'),
 ]
 
 if settings.DEBUG:
