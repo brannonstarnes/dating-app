@@ -20,24 +20,32 @@ zodiac_choices = (
 class Profile(models.Model):
     name = models.CharField(max_length=256)
     age = models.IntegerField(default = "None Selected")
+    
     gender = models.CharField(
         max_length = 256, choices = gender_choices, default='None Selected'
         )
+    
     city = models.CharField(max_length=256)
+    
     state = models.CharField(
         max_length=256, choices = state_choices, default="None Selected"
     )
+    
     partner_preferences = models.CharField(
         max_length = 256, choices = partner_preference_choices, default="None Selected"
         )
+    
     description = models.CharField(max_length=3000)
     hobbies_interests = models.CharField(max_length=3000)
+    
     zodiac = models.CharField(
         max_length = 256, choices = zodiac_choices, default = "None Selected"
         )
+    
     owner = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, null=True, blank=True
     )
+    
     description = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
