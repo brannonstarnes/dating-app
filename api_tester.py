@@ -76,13 +76,17 @@ class ApiTester:
         return response.json()
 
     # TODO adjust parameter names to match API
-    def create(self, name, description=None, owner=None):
+    def create(self, owner, name, age, city, state, gender, partner_preferences, zodiac, description=None, hobbies_interests=None):
         """creates a resource in api
 
         Usage:
         python api_tester.py create /
-            --name=required --description=optional --owner=optional
-
+            --owner=required --name=required 
+            --age=required   --city=required
+            --state=required --gender=required
+            --partner_preferences = required
+            --zodiac = required --description=optional
+            --hobbies_interests=optional
         Returns: JSON
         """
 
@@ -96,7 +100,14 @@ class ApiTester:
 
         data = {
             "name": name,
+            "age": age,
+            "gender": gender,
+            "city": city,
+            "state": state,
+            "partner_preferences": partner_preferences,
             "description": description,
+            "hobbies_interests": hobbies_interests,
+            "zodiac": zodiac,
             "owner": owner,
         }
 
@@ -104,12 +115,17 @@ class ApiTester:
 
         return response.json()
 
-    def update(self, id, name=None, description=None, owner=None):
+    def update(self, id, owner, name, age, city, state, gender, partner_preferences, zodiac, description=None, hobbies_interests=None):
         """updates a resource in api
 
         Usage:
         python api_tester.py update 1 /
-            --name=optional --description=optional --owner=optional
+            --owner=required --name=required 
+            --age=required   --city=required
+            --state=required --gender=required
+            --partner_preferences = required
+            --zodiac = required --description=optional
+            --hobbies_interests=optional
 
         Returns: JSON
         """
@@ -126,7 +142,14 @@ class ApiTester:
 
         data = {
             "name": name or original["name"],
+            "age" : age or original["age"],
+            "city": city or original["city"],
+            "state": state or original["state"],
+            "gender": gender or original["gender"],
+            "partner_preferences": partner_preferences or original["partner_preferences"],
             "description": description or original["description"],
+            "zodiac": zodiac or original["zodiac"],
+            "hobbies_interests": hobbies_interests or original["hobbies_interests"],
             "owner": owner or original["owner"],
         }
 
