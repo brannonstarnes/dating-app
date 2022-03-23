@@ -19,7 +19,7 @@ zodiac_choices = (
     )
 
 class Profile(models.Model):
-    profile_pic = models.ImageField(upload_to='images/')
+    profile_pic = models.ImageField(upload_to='images/', null = True)
     name = models.CharField(max_length=256)
     age = models.IntegerField(default = "None Selected")
     
