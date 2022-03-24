@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Browse Profiles</h1>
+    {% for profile in all_profiles_list %}
+    <div class="user-profile">
+
+        <img src="/media/images/peter_quill.jpg">
+        
+        <h2>{{profile.name}}</h2>
+        <p>{{profile.age}}, {{profile.gender}}<br>
+        {{profile.city}}, {{profile.state}}<br>
+        Partner Preferences: {{profile.partner_preferences}}</p>
+        
+        <h3>Hobbies and Interests</h3>
+        <p>{{profile.hobbies_interests}}</p>
+        
+        <h3>Description</h3>
+        <p>{{profile.description}}</p>
+        <br>    
+    </div>    
+    
+    {% endfor %}
+</ul>
+</div>
+{% endblock content %}

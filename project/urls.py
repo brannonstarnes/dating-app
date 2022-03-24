@@ -35,7 +35,8 @@ urlpatterns = [
         jwt_views.TokenRefreshView.as_view(),
         name="token_refresh",
     ),
-    
+    path('api/v1/profiles/members/', include('django.contrib.auth.urls')),
+    path('api/v1/profiles/members/', include('members.urls')),
 ]
 
 if settings.DEBUG:
