@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     # local
-    "accounts",
+    # "accounts",
     "profiles",
     "members",
 ]
@@ -155,7 +155,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = "members.CustomUser"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
