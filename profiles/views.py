@@ -20,6 +20,7 @@ class ProfileList(ListCreateAPIView):
 class ProfileDetail(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
     queryset = Profile.objects.all()
+    template_name = 'profile_detail.html'
     serializer_class = ProfileSerializer
 
 

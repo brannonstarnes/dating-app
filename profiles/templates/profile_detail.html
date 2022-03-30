@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="user-profile">
+
+    <img src="{{self.profile_pic.url}}" height="200" width="300">
+    
+    <h2>{{self.name}}</h2>
+    <p>{{self.age}}, {{self.gender}}<br>
+    {{self.city}}, {{self.state}}<br>
+    Partner Preferences: {{self.partner_preferences}}</p>
+    
+    <h3>Hobbies and Interests</h3>
+    <p>{{self.hobbies_interests}}</p>
+    
+    <h3>Description</h3>
+    <p>{{self.description}}</p>
+    <br>    
+</div>  
+
+{% endblock content %}
