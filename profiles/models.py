@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.db import models
 from PIL import Image
 
@@ -45,10 +45,10 @@ class Profile(models.Model):
         )
     
     owner = models.ForeignKey(
-        get_user_model(), on_delete=models.CASCADE, null=True, blank=True
+        User, on_delete=models.CASCADE, null=True, blank=True
     )
     
     description = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' | ' + self.age + ', ' + self.gender
