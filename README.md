@@ -5,6 +5,7 @@ Welcome and thanks for visiting my repo! Tea Meets Donut is a backend focused pr
 ## Get Started
 
  - clone repository
+ - activate virtual environment
  - install dependencies
  - go to root directory (with the manage.py file)
  - ```python manage.py runserver```
@@ -17,4 +18,4 @@ Welcome and thanks for visiting my repo! Tea Meets Donut is a backend focused pr
     - /admin/    Use 'admin' for username and password
     - /api/v1/profiles/
     - /api/v1/profiles/home
-
+ 
