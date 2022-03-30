@@ -1,4 +1,5 @@
 from msilib.schema import Shortcut
+from pdb import post_mortem
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
@@ -8,7 +9,7 @@ from .permissions import IsOwnerOrReadOnly
 from .serializers import ProfileSerializer
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from .forms import * 
 
 class ProfileList(ListCreateAPIView):
@@ -26,6 +27,11 @@ class HomePageView(ListView):
     model = Profile
     template_name = 'home.html'
     context_object_name = 'all_profiles_list'
+
+class CreateProfile(CreateView):
+    model = Profile
+    template_name = 'create_profile.html'
+    fields = '__all__'
 
 def profile_pic_view(request):
 
