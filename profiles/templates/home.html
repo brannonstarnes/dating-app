@@ -1,24 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Browse Profiles</h1>
     {% for profile in all_profiles_list %}
-    <div class="user-profile">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{profile.profile_pic.url}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">{{profile.name}}</h5>
+                <p class="card-text">{{profile.age}} | {{profile.gender}}<br>
+                    {{profile.city}}, {{profile.state}}<br>
+                    Partner Preferences: {{profile.partner_preferences}}</p>
+                <!-- <p class="card-text">{{profile.description}}</p> -->
+                <p class="card-text"><small class="text-muted">Interests: {{profile.hobbies_interests}}</small></p>
 
-        <img src="{{profile.profile_pic.url}}" height="200" width="300">
-        
-        <h2>{{profile.name}}</h2>
-        <p>{{profile.age}}, {{profile.gender}}<br>
-        {{profile.city}}, {{profile.state}}<br>
-        Partner Preferences: {{profile.partner_preferences}}</p>
-        
-        <h3>Hobbies and Interests</h3>
-        <p>{{profile.hobbies_interests}}</p>
-        
-        <h3>Description</h3>
-        <p>{{profile.description}}</p>
-        <br>    
-    </div>    
+
+                                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    View Profile
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">A Closer Look</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="{{profile.profile_pic.url}}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{profile.name}}</h5>
+                                                <p class="card-text">
+                                                    {{profile.age}} | {{profile.gender}}
+                                                    <br>
+                                                    {{profile.city}}, {{profile.state}}
+                                                    <br>
+                                                    Partner Preferences: {{profile.partner_preferences}}
+                                                </p>
+                                                <p class="card-text">{{profile.description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>          
+                            
+
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>        
+
+
+                </div>
+            </div>
+            </div>
+        </div>  
     
     {% endfor %}
 {% endblock content %}
+
+
+
+
+
