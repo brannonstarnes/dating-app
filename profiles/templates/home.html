@@ -20,12 +20,12 @@
 
 
                                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" id="modBtn{{profile.id}}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{profile.id}}">
                     View Profile
                 </button>
                 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal{{profile.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -33,6 +33,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         
+
                         <div class="modal-body">
                                 <div class="card mb-3" style="max-width: 540px;">
                                     <div class="row g-0">
@@ -54,17 +55,17 @@
                                         </div>
                                     </div>
                                 </div>          
-                            
-
                         </div>
+
+
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
+
+
                     </div>
                     </div>
                 </div>        
-
-
                 </div>
             </div>
             </div>
